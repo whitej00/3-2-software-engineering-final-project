@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/config :: config"/>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="login">
+    <br>
+    <h1>LOGIN</h1>
+    <br>
+    <form method="POST" action="/login/check">
+        <label>USERNAME:</label> <input type="text" name="username" id="username"><br>
+        <label>PASSWORD:</label> <input type="password" name="password" id="password"><br>
+        <input type="submit" value="LOGIN">
+    </form>
+</div>
+
+</body>
+</html>

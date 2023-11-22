@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/config :: config"/>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="container">
+    <div class="item">
+        <div>
+            <h2 th:text="${item.getTitle()}"></h2>
+        </div>
+        <div>
+            <img th:each="imageFile : ${item.imageFiles}" th:src="|/images/${imageFile.getStoreFileName()}|" width="600" height="400"/>
+        </div>
+        <div>
+            <textarea readonly th:text="${item.getContent()}"></textarea>
+        </div>
+        <div>
+            <a th:href="|/images/get/${item.imageFiles.get(0).getStoreFileName()}|"><h2>설계도 구매</h2></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/config :: config"/>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div id="tool">
+    <a id="newBtn" href="/items/new">설계도 등록</a>
+</div>
+<div class="container">
+    <div class="item" th:each="item:${items}">
+        <div>
+            <a th:href="|/items/${item.getId()}|"><h2 th:text="${item.getTitle()}"></h2></a>
+        </div>
+        <div>
+            <img th:each="imageFile : ${item.imageFiles}" th:src="|/images/${imageFile.getStoreFileName()}|" width="600" height="400"/>
+        </div>
+        <div>
+            <textarea readonly th:text="${item.getContent()}"></textarea>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

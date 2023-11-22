@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/config :: config"/>
+
+<body>
+<header th:replace="fragments/header :: header"></header>
+<div class="container">
+    <h2>설계도 등록</h2>
+    <form th:action method="post" enctype="multipart/form-data">
+        제목: <br><input type="text" name="itemTitle"><br>
+        코드: <br><textarea name="itemContent" rows="20" cols="60"></textarea><br>
+        설계도: <br><input type="file" multiple="multiple" name="imageFiles"><br>
+        <br>
+        <input type="submit"/>
+    </form>
+</div>
+
+</body>
+</html>
